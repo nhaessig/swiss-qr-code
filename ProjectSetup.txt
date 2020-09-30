@@ -1,0 +1,16 @@
+This file contains a description SwissQrHF project's folder/file structure
+
+-Documentation
+	-ProjectEnvironment // Contains everything about project environment (project specifications)
+		-ProjectOrderSwissQrDebitor.docx 
+		
+	-ProjectOrganisation // Contains organisation stuff like timetables, project desicions
+		-ProjectOrganisation.docx // Contains project timeline
+		
+	-Glossary.docx
+	-StyleGuide.docx
+	-TechnicalDocumentation.md
+
+-Project
+	-SwissQR_JHF // Contains the eclipse solution (UP TO COMPLETE)
+		
