@@ -1,13 +1,12 @@
 This file contains a description SwissQrHF project's folder/file structure
 
--Documentation
-	-ProjectEnvironment // Contains everything about project environment (project specifications)
-		-ProjectOrderSwissQrDebitor.docx 
-		
+-Documentation	
 	-ProjectOrganisation // Contains organisation stuff like timetables, project desicions
 		-ProjectOrganisation.docx // Contains project timeline
-		
+	-Presentations // Contains all .pptx files
+		-Task2.pptx
 	-Glossary.docx
+	-ProjectWork.docx
 	-StyleGuide.docx
 	-TechnicalDocumentation.md
 
