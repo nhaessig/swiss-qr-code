@@ -5,6 +5,9 @@ This file contains a description SwissQrHF project's folder/file structure
 		-ProjectOrganisation.docx // Contains project timeline
 	-Presentations // Contains all .pptx files
 		-Task2.pptx
+	-Documents //Contains third party documents/guides
+		-ig-qr-bill-de.pdf 
+		-style-guide-de.pdf		
 	-Glossary.docx
 	-ProjectWork.docx
 	-StyleGuide.docx
