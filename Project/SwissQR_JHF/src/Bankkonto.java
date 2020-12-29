@@ -1,5 +1,5 @@
 
-public class Bankkonto1 {
+public class Bankkonto {
 	//Attribute
 	
 	String iban;
