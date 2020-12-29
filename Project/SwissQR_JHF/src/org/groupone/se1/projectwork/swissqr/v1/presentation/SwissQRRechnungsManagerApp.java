@@ -13,7 +13,9 @@ public class SwissQRRechnungsManagerApp {
 		
 		consoleClient.deleteDebitorenRechnung(2);
 		
-		consoleClient.displayAllDebitorRechnungen();
+		consoleClient.createDebitorenRechnung(23.00, "CH4131998124010159011");
+		
+		consoleClient.displayDebitorenRechnung(3);
 	}
 
 }
