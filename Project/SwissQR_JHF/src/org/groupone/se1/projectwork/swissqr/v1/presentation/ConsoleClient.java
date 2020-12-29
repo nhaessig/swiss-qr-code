@@ -13,9 +13,11 @@ public class ConsoleClient {
 		debitorenRechnungFactory = DebitorenRechnungFactory.getInstance();
 	}
 
-	public void createDebitorenRechnung(double betrag, String iban) {
+	public void createDebitorenRechnung(double betrag, String zahlungsempfaenger, String zahlungspflichtiger,
+			String iban) {
 
-		debitorenRechnungFactory.saveDebitorenRechnung(debitorenRechnungFactory.createDebitorenRechnung(betrag, iban));
+		debitorenRechnungFactory.saveDebitorenRechnung(debitorenRechnungFactory.createDebitorenRechnung(betrag,
+				zahlungsempfaenger, zahlungspflichtiger, iban));
 	}
 
 	public void deleteDebitorenRechnung(int debitorenRechnungID) {
@@ -24,7 +26,10 @@ public class ConsoleClient {
 	}
 
 	public void displayDebitorRechnungOnConsole(DebitorenRechnung debitorenRechnung) {
-		System.out.println("+++ DebitorenRechnung: " + "Betrag: " + debitorenRechnung.getBetrag());
+		System.out.println("---DebitorenRechnung:---");
+		System.out.println("\tBetrag: " + String.format("%.2f", debitorenRechnung.getBetrag()) + " CHF");
+		System.out.println("\tZahlungsempfaenger: " + debitorenRechnung.getZahlungsempfaenger());
+		System.out.println("\tZahlungspflichtiger: " + debitorenRechnung.getZahlungspflichtiger());
 	}
 
 	public void displayDebitorenRechnung(int debitorenRechnungID) {

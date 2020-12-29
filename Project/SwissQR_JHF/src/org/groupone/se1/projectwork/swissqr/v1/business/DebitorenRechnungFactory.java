@@ -23,8 +23,8 @@ public class DebitorenRechnungFactory {
 		return instance;
 	}
 
-	public DebitorenRechnung createDebitorenRechnung(double dBetrag, String iban) {
-		return new BCDebitorenRechnungQRIBAN(dBetrag, iban);
+	public DebitorenRechnung createDebitorenRechnung(double dBetrag, String zahlungsempfaenger, String zahlungspflichtiger, String iban) {
+		return new BCDebitorenRechnungQRIBAN(dBetrag, zahlungsempfaenger, zahlungspflichtiger, iban);
 	}
 
 	public void saveDebitorenRechnung(DebitorenRechnung debitorenRechnung) {
@@ -56,15 +56,17 @@ public class DebitorenRechnungFactory {
 	}
 
 	public String[] convertDebitorenRechnungToArray(DebitorenRechnung debitorenRechnung) {
-		String[] debitorenRechnungData = new String[1];
+		String[] debitorenRechnungData = new String[3];
 		debitorenRechnungData[DebitorenRechnungDAO.BETRAG_INDEX] = Double.toString(debitorenRechnung.getBetrag());
+		debitorenRechnungData[DebitorenRechnungDAO.ZAHLUNGSEMPFAENGER_INDEX] = debitorenRechnung.getZahlungsempfaenger();
+		debitorenRechnungData[DebitorenRechnungDAO.ZAHLUNGSPFLICHTIGER_INDEX] = debitorenRechnung.getZahlungspflichtiger();
 		return debitorenRechnungData;
 	}
 
 	public DebitorenRechnung convertArrayToDebitorenRechnung(String[] debitorenRechnungData) {
 
 		try {
-			return createDebitorenRechnung(Double.parseDouble(debitorenRechnungData[DebitorenRechnungDAO.BETRAG_INDEX]),
+			return createDebitorenRechnung(Double.parseDouble(debitorenRechnungData[DebitorenRechnungDAO.BETRAG_INDEX]), debitorenRechnungData[DebitorenRechnungDAO.ZAHLUNGSEMPFAENGER_INDEX], debitorenRechnungData[DebitorenRechnungDAO.ZAHLUNGSPFLICHTIGER_INDEX],
 					"");
 
 		} catch (Exception e) {
