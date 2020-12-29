@@ -1,3 +1,11 @@
+/**
+ * Test class for SwissQRRechnungsManagerApp persistence logic
+ * Please note that all accounting specific terms are written in German because it is an exclusive project for accounting in Switzerland
+ * 
+ * @author Fabrizio Piacente, Markus Kaufmann, Nicolas Hässig
+ */
+
+
 package ch.groupone.swissqr.v1.test.persistence;
 
 import static org.junit.Assert.assertEquals;
@@ -25,7 +33,7 @@ import static ch.groupone.swissqr.v1.test.base.DebitorenRechnungTestBase.EXPECTE
 import static ch.groupone.swissqr.v1.test.base.DebitorenRechnungTestBase.EXPECTED_ZAHLUNGSPFLICHTIGER_2;
 import static ch.groupone.swissqr.v1.test.base.DebitorenRechnungTestBase.EXPECTED_ZAHLUNGSPFLICHTIGER_3;
 import static ch.groupone.swissqr.v1.persistence.DebitorenRechnungDAO.BETRAG_INDEX;
-import static ch.groupone.swissqr.v1.persistence.DebitorenRechnungDAO.PRIMARYID_INDEX;
+import static ch.groupone.swissqr.v1.persistence.DebitorenRechnungDAO.DEBITORENRECHNUNGID_INDEX;
 import static ch.groupone.swissqr.v1.persistence.DebitorenRechnungDAO.ZAHLUNGSEMPFAENGER_INDEX;
 import static ch.groupone.swissqr.v1.persistence.DebitorenRechnungDAO.ZAHLUNGSPFLICHTIGER_INDEX;
 
@@ -46,17 +54,16 @@ public class DebitorenRechnungDAOTest {
 	}
 
 	@Test
-	public void testIfPrimaryKeyIsSetAfterInsert() {
+	public void testIfDebitorenIdIsSetAfterInsert() {
 
 		String[] debitorenRechnungData_Inserted = DebitorenRechnungTestBase.createDebitorenRechnungAsArray(
 				EXPECTED_BETRAG_1, EXPECTED_ZAHLUNGSEMPFAENGER_1, EXPECTED_ZAHLUNGSPFLICHTIGER_1);
-		String[] debitorenRechnungData_NotInserted = DebitorenRechnungTestBase.createDebitorenRechnungAsArray(
-				EXPECTED_BETRAG_1, EXPECTED_ZAHLUNGSEMPFAENGER_1, EXPECTED_ZAHLUNGSPFLICHTIGER_1);
+		String[] debitorenRechnungData_NotInserted = DebitorenRechnungTestBase.createDebitorenRechnungAsArray(EXPECTED_BETRAG_1, EXPECTED_ZAHLUNGSEMPFAENGER_1, EXPECTED_ZAHLUNGSPFLICHTIGER_1);
 
 		debitorenRechnungDAO.insertDebitorenRechnungAsArray(debitorenRechnungData_Inserted);
 
-		assertEquals("Expected to be 0", Integer.parseInt(debitorenRechnungData_NotInserted[PRIMARYID_INDEX]), 0);
-		assertEquals("Expected to be 1", Integer.parseInt(debitorenRechnungData_Inserted[PRIMARYID_INDEX]), 1);
+		assertEquals("Expected to be 0", Integer.parseInt(debitorenRechnungData_NotInserted[DEBITORENRECHNUNGID_INDEX]), 0);
+		assertEquals("Expected to be 1", Integer.parseInt(debitorenRechnungData_Inserted[DEBITORENRECHNUNGID_INDEX]), 1);
 
 	}
 
@@ -90,10 +97,10 @@ public class DebitorenRechnungDAOTest {
 			assertTrue("Expected Zahlungsempfaenger to be the same",
 					expectedDebitorenRechnungen[i][ZAHLUNGSEMPFAENGER_INDEX]
 							.equals(dDebitorenRechnungenToTest[ZAHLUNGSEMPFAENGER_INDEX]));
-			assertTrue("Expected PrimeryId to be the same", expectedDebitorenRechnungen[i][PRIMARYID_INDEX]
-					.equals(dDebitorenRechnungenToTest[PRIMARYID_INDEX]));
+			assertTrue("Expected PrimeryId to be the same", expectedDebitorenRechnungen[i][DEBITORENRECHNUNGID_INDEX]
+					.equals(dDebitorenRechnungenToTest[DEBITORENRECHNUNGID_INDEX]));
 			assertTrue("Expected PrimeryId to be 2",
-					dDebitorenRechnungenToTest[PRIMARYID_INDEX].equals(Integer.toString(i + 1)));
+					dDebitorenRechnungenToTest[DEBITORENRECHNUNGID_INDEX].equals(Integer.toString(i + 1)));
 		}
 	}
 

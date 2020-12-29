@@ -1,3 +1,10 @@
+/**
+ * Class implementing a factory for DAOs of customer invoices (Debitorenrechnung)
+ * Please note that all accounting specific terms are written in German because it is an exclusive project for accounting in Switzerland
+ * 
+ * @author Fabrizio Piacente, Markus Kaufmann, Nicolas Hässig
+ */
+
 package ch.groupone.swissqr.v1.persistence;
 
 public class DebitorenRechnungDAOFactory {

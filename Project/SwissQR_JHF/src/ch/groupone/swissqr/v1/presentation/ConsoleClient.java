@@ -1,3 +1,10 @@
+/**
+ * Class implementing a console client as main in-/output for the SwissQRRechnungsManagerApp
+ * Please note that all accounting specific terms are written in German because it is an exclusive project for accounting in Switzerland
+ * 
+ * @author Fabrizio Piacente, Markus Kaufmann, Nicolas Hässig
+ */
+
 package ch.groupone.swissqr.v1.presentation;
 
 import java.util.ArrayList;
@@ -31,7 +38,7 @@ public class ConsoleClient {
 	}
 
 	public void displayDebitorRechnungOnConsole(DebitorenRechnung debitorenRechnung) {
-		System.out.println("---DebitorenRechnung:---ID:" + debitorenRechnung.getPrimaryId());
+		System.out.println("---DebitorenRechnung:---ID:" + debitorenRechnung.debitorenRechnungID());
 		System.out.println("\tBetrag: " + String.format("%.2f", debitorenRechnung.getBetrag()) + " CHF");
 		System.out.println("\tZahlungsempfaenger: " + debitorenRechnung.getZahlungsempfaenger());
 		System.out.println("\tZahlungspflichtiger: " + debitorenRechnung.getZahlungspflichtiger());

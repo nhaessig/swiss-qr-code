@@ -1,7 +1,14 @@
+/**
+ * Class implementing a factory for customer invoice (Debitorenrechnung) implementations
+ * Please note that all accounting specific terms are written in German because it is an exclusive project for accounting in Switzerland
+ * 
+ * @author Fabrizio Piacente, Markus Kaufmann, Nicolas Hässig
+ */
+
 package ch.groupone.swissqr.v1.business;
 
 import static ch.groupone.swissqr.v1.persistence.DebitorenRechnungDAO.BETRAG_INDEX;
-import static ch.groupone.swissqr.v1.persistence.DebitorenRechnungDAO.PRIMARYID_INDEX;
+import static ch.groupone.swissqr.v1.persistence.DebitorenRechnungDAO.DEBITORENRECHNUNGID_INDEX;
 import static ch.groupone.swissqr.v1.persistence.DebitorenRechnungDAO.ZAHLUNGSEMPFAENGER_INDEX;
 import static ch.groupone.swissqr.v1.persistence.DebitorenRechnungDAO.ZAHLUNGSPFLICHTIGER_INDEX;
 
@@ -32,8 +39,8 @@ public class DebitorenRechnungFactory {
 		return new BCDebitorenRechnungQRIBAN(dBetrag, zahlungsempfaenger, zahlungspflichtiger, iban);
 	}
 	
-	public DebitorenRechnung createDebitorenRechnungWithPrimaryId(int primaryId, double dBetrag, String zahlungsempfaenger, String zahlungspflichtiger, String iban) {
-		return new BCDebitorenRechnungQRIBAN(primaryId, dBetrag, zahlungsempfaenger, zahlungspflichtiger, iban);
+	public DebitorenRechnung createDebitorenRechnungWithDebitorenRechnungID(int debitorenRechnungID, double dBetrag, String zahlungsempfaenger, String zahlungspflichtiger, String iban) {
+		return new BCDebitorenRechnungQRIBAN(debitorenRechnungID, dBetrag, zahlungsempfaenger, zahlungspflichtiger, iban);
 	}
 
 	public void saveDebitorenRechnung(DebitorenRechnung debitorenRechnung) {
@@ -79,7 +86,7 @@ public class DebitorenRechnungFactory {
 	public DebitorenRechnung convertArrayToDebitorenRechnung(String[] debitorenRechnungData) {
 
 		try {
-			return createDebitorenRechnungWithPrimaryId(Integer.parseInt(debitorenRechnungData[PRIMARYID_INDEX]),Double.parseDouble(debitorenRechnungData[DebitorenRechnungDAO.BETRAG_INDEX]), debitorenRechnungData[DebitorenRechnungDAO.ZAHLUNGSEMPFAENGER_INDEX], debitorenRechnungData[DebitorenRechnungDAO.ZAHLUNGSPFLICHTIGER_INDEX],
+			return createDebitorenRechnungWithDebitorenRechnungID(Integer.parseInt(debitorenRechnungData[DEBITORENRECHNUNGID_INDEX]),Double.parseDouble(debitorenRechnungData[DebitorenRechnungDAO.BETRAG_INDEX]), debitorenRechnungData[DebitorenRechnungDAO.ZAHLUNGSEMPFAENGER_INDEX], debitorenRechnungData[DebitorenRechnungDAO.ZAHLUNGSPFLICHTIGER_INDEX],
 					"");
 
 		} catch (Exception e) {
