@@ -1,6 +1,9 @@
 package org.groupone.se1.projectwork.swissqr.v1.persistence;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 public class DebitorenRechnungDAOMock implements DebitorenRechnungDAO {
 
@@ -26,6 +29,20 @@ public class DebitorenRechnungDAOMock implements DebitorenRechnungDAO {
 	public void deleteDebitorenRechnung(int debitorenRechnungID) {
 
 		debitorenRechnungList.remove(Integer.toString(debitorenRechnungID));
+	}
+	
+	public ArrayList<String[]> selectAllDebitorenRechnungAsArrayList()
+	{
+		ArrayList<String[]> debitorenRechnungen = new ArrayList<String[]>();
+		
+		Map<String, String[]> map = debitorenRechnungList;
+		Iterator<Map.Entry<String, String[]>> entries = map.entrySet().iterator();
+		while (entries.hasNext()) {
+		    Map.Entry<String, String[]> entry = entries.next();
+		    debitorenRechnungen.add(entry.getValue());
+		}
+			
+		return debitorenRechnungen; 
 	}
 
 }

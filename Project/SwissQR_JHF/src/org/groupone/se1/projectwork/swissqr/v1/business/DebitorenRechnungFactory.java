@@ -1,5 +1,7 @@
 package org.groupone.se1.projectwork.swissqr.v1.business;
 
+import java.util.ArrayList;
+
 import org.groupone.se1.projectwork.swissqr.v1.persistence.DebitorenRechnungDAO;
 import org.groupone.se1.projectwork.swissqr.v1.persistence.DebitorenRechnungDAOFactory;
 
@@ -34,10 +36,23 @@ public class DebitorenRechnungFactory {
 		this.debitorenRechnungDAO.deleteDebitorenRechnung(debitorenRechnungID);
 	}
 
-	public DebitorenRechnung getDebitorenRechnung(int debitorenRechnungID) {
+	public DebitorenRechnung selectDebitorenRechnung(int debitorenRechnungID) {
 
 		String[] debitorenRechnungData = this.debitorenRechnungDAO.selectDebitorenRechnungAsArray(debitorenRechnungID);
 		return convertArrayToDebitorenRechnung(debitorenRechnungData);
+	}
+
+	public ArrayList<DebitorenRechnung> selectAllDebitorenRechnung() {
+
+		ArrayList<DebitorenRechnung> debitorenRechnungen = new ArrayList<DebitorenRechnung>();
+
+		ArrayList<String[]> debitorenRechnungenData = this.debitorenRechnungDAO.selectAllDebitorenRechnungAsArrayList();
+
+		for (String[] data : debitorenRechnungenData) {
+			debitorenRechnungen.add(convertArrayToDebitorenRechnung(data));
+		}
+
+		return debitorenRechnungen;
 	}
 
 	public String[] convertDebitorenRechnungToArray(DebitorenRechnung debitorenRechnung) {
