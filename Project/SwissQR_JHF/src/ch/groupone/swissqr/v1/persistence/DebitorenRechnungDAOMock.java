@@ -1,4 +1,4 @@
-package org.groupone.se1.projectwork.swissqr.v1.persistence;
+package ch.groupone.swissqr.v1.persistence;
 
 import java.util.ArrayList;
 import java.util.HashMap;

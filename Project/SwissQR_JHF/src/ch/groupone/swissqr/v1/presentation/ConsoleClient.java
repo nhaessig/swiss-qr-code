@@ -1,9 +1,9 @@
-package org.groupone.se1.projectwork.swissqr.v1.presentation;
+package ch.groupone.swissqr.v1.presentation;
 
 import java.util.ArrayList;
 
-import org.groupone.se1.projectwork.swissqr.v1.business.DebitorenRechnung;
-import org.groupone.se1.projectwork.swissqr.v1.business.DebitorenRechnungFactory;
+import ch.groupone.swissqr.v1.business.DebitorenRechnung;
+import ch.groupone.swissqr.v1.business.DebitorenRechnungFactory;
 
 public class ConsoleClient {
 

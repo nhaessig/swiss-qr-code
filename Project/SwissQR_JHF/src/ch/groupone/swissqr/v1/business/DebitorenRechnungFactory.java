@@ -1,9 +1,9 @@
-package org.groupone.se1.projectwork.swissqr.v1.business;
+package ch.groupone.swissqr.v1.business;
 
 import java.util.ArrayList;
 
-import org.groupone.se1.projectwork.swissqr.v1.persistence.DebitorenRechnungDAO;
-import org.groupone.se1.projectwork.swissqr.v1.persistence.DebitorenRechnungDAOFactory;
+import ch.groupone.swissqr.v1.persistence.DebitorenRechnungDAO;
+import ch.groupone.swissqr.v1.persistence.DebitorenRechnungDAOFactory;
 
 public class DebitorenRechnungFactory {
 

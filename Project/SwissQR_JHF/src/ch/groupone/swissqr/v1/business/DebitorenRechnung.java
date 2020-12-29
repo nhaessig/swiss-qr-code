@@ -1,4 +1,4 @@
-package org.groupone.se1.projectwork.swissqr.v1.business;
+package ch.groupone.swissqr.v1.business;
 
 public interface DebitorenRechnung {
 	
