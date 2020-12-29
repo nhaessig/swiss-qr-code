@@ -2,7 +2,7 @@ package org.groupone.se1.projectwork.swissqr.v1.persistence;
 
 public class DebitorenRechnungDAOFactory {
 
-	static final DebitorenRechnungDAOFactory INSTANCE = new DebitorenRechnungDAOFactory();
+	private static final DebitorenRechnungDAOFactory INSTANCE = new DebitorenRechnungDAOFactory();
 
 	private DebitorenRechnungDAOFactory() {
 	}
