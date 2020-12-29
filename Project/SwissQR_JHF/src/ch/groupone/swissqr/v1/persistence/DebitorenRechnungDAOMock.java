@@ -18,6 +18,7 @@ public class DebitorenRechnungDAOMock implements DebitorenRechnungDAO {
 	public void insertDebitorenRechnungAsArray(String[] debitorenRechnungData) {
 
 		this.insertCounter++;
+		debitorenRechnungData[PRIMARYID_INDEX] = Integer.toString(insertCounter);
 		this.debitorenRechnungList.put(Integer.toString(insertCounter), debitorenRechnungData);
 	}
 
@@ -26,11 +27,6 @@ public class DebitorenRechnungDAOMock implements DebitorenRechnungDAO {
 		return debitorenRechnungList.get(Integer.toString(debitorenRechnungID));
 	}
 
-	public void deleteDebitorenRechnung(int debitorenRechnungID) {
-
-		debitorenRechnungList.remove(Integer.toString(debitorenRechnungID));
-	}
-	
 	public ArrayList<String[]> selectAllDebitorenRechnungAsArrayList()
 	{
 		ArrayList<String[]> debitorenRechnungen = new ArrayList<String[]>();
@@ -44,5 +40,14 @@ public class DebitorenRechnungDAOMock implements DebitorenRechnungDAO {
 			
 		return debitorenRechnungen; 
 	}
+	
+	public void deleteDebitorenRechnung(int debitorenRechnungID) {
 
+		debitorenRechnungList.remove(Integer.toString(debitorenRechnungID));
+	}
+	
+	public void deleteAllDebitorenRechnung()
+	{
+		debitorenRechnungList.clear();
+	}
 }

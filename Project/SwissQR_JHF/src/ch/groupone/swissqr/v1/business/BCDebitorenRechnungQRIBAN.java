@@ -9,6 +9,12 @@ public class BCDebitorenRechnungQRIBAN extends AbstractDebitorenRechnung {
 
 		setQrIBAN(qrIBAN);
 	}
+	
+	public BCDebitorenRechnungQRIBAN(int primaryId, double betrag, String zahlungsempfaenger, String zahlungspflichtiger ,String qrIBAN) {
+		super(primaryId, betrag, zahlungsempfaenger, zahlungspflichtiger);
+
+		setQrIBAN(qrIBAN);
+	}
 
 	public void setQrIBAN(String qrIBAN) {
 		this.qrIBAN = qrIBAN;

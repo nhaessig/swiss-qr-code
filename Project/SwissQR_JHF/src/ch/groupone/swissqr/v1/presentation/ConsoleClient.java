@@ -24,9 +24,14 @@ public class ConsoleClient {
 
 		debitorenRechnungFactory.deleteDebitorenRechnung(debitorenRechnungID);
 	}
+	
+	public void deleteAllDebitorenRechnung() {
+
+		debitorenRechnungFactory.deleteAllDebitorenRechnung();
+	}
 
 	public void displayDebitorRechnungOnConsole(DebitorenRechnung debitorenRechnung) {
-		System.out.println("---DebitorenRechnung:---");
+		System.out.println("---DebitorenRechnung:---ID:" + debitorenRechnung.getPrimaryId());
 		System.out.println("\tBetrag: " + String.format("%.2f", debitorenRechnung.getBetrag()) + " CHF");
 		System.out.println("\tZahlungsempfaenger: " + debitorenRechnung.getZahlungsempfaenger());
 		System.out.println("\tZahlungspflichtiger: " + debitorenRechnung.getZahlungspflichtiger());

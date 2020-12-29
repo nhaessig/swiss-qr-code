@@ -16,6 +16,18 @@ public class SwissQRRechnungsManagerApp {
 		consoleClient.createDebitorenRechnung(23.00, "MonoAg", "Treuhand +", "CH4131998124010159011");
 
 		consoleClient.displayDebitorenRechnung(3);
+		consoleClient.displayAllDebitorRechnungen();
+		
+		consoleClient.deleteAllDebitorenRechnung();
+		
+		consoleClient.createDebitorenRechnung(120.25, "MonoAg", "Hans Meier", "CH4431999123000889012");
+		consoleClient.createDebitorenRechnung(10.50, "MonoAg", "Six Fiance", "CH4231998124010859023");
+		consoleClient.deleteAllDebitorenRechnung();
+		
+		
+		consoleClient.createDebitorenRechnung(120.25, "MonoAg", "Hans Meier", "CH4431999123000889012");
+		consoleClient.createDebitorenRechnung(10.50, "MonoAg", "Six Fiance", "CH4231998124010859023");
+		consoleClient.displayAllDebitorRechnungen();
 	}
 
 }

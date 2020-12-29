@@ -26,6 +26,10 @@ public class DebitorenRechnungFactory {
 	public DebitorenRechnung createDebitorenRechnung(double dBetrag, String zahlungsempfaenger, String zahlungspflichtiger, String iban) {
 		return new BCDebitorenRechnungQRIBAN(dBetrag, zahlungsempfaenger, zahlungspflichtiger, iban);
 	}
+	
+	public DebitorenRechnung createDebitorenRechnungWithPrimaryId(int primaryId, double dBetrag, String zahlungsempfaenger, String zahlungspflichtiger, String iban) {
+		return new BCDebitorenRechnungQRIBAN(primaryId, dBetrag, zahlungsempfaenger, zahlungspflichtiger, iban);
+	}
 
 	public void saveDebitorenRechnung(DebitorenRechnung debitorenRechnung) {
 
@@ -34,6 +38,10 @@ public class DebitorenRechnungFactory {
 
 	public void deleteDebitorenRechnung(int debitorenRechnungID) {
 		this.debitorenRechnungDAO.deleteDebitorenRechnung(debitorenRechnungID);
+	}
+	
+	public void deleteAllDebitorenRechnung() {
+		this.debitorenRechnungDAO.deleteAllDebitorenRechnung();
 	}
 
 	public DebitorenRechnung selectDebitorenRechnung(int debitorenRechnungID) {
@@ -56,7 +64,7 @@ public class DebitorenRechnungFactory {
 	}
 
 	public String[] convertDebitorenRechnungToArray(DebitorenRechnung debitorenRechnung) {
-		String[] debitorenRechnungData = new String[3];
+		String[] debitorenRechnungData = new String[4];
 		debitorenRechnungData[DebitorenRechnungDAO.BETRAG_INDEX] = Double.toString(debitorenRechnung.getBetrag());
 		debitorenRechnungData[DebitorenRechnungDAO.ZAHLUNGSEMPFAENGER_INDEX] = debitorenRechnung.getZahlungsempfaenger();
 		debitorenRechnungData[DebitorenRechnungDAO.ZAHLUNGSPFLICHTIGER_INDEX] = debitorenRechnung.getZahlungspflichtiger();
@@ -66,7 +74,7 @@ public class DebitorenRechnungFactory {
 	public DebitorenRechnung convertArrayToDebitorenRechnung(String[] debitorenRechnungData) {
 
 		try {
-			return createDebitorenRechnung(Double.parseDouble(debitorenRechnungData[DebitorenRechnungDAO.BETRAG_INDEX]), debitorenRechnungData[DebitorenRechnungDAO.ZAHLUNGSEMPFAENGER_INDEX], debitorenRechnungData[DebitorenRechnungDAO.ZAHLUNGSPFLICHTIGER_INDEX],
+			return createDebitorenRechnungWithPrimaryId(Integer.parseInt(debitorenRechnungData[DebitorenRechnungDAO.PRIMARYID_INDEX]),Double.parseDouble(debitorenRechnungData[DebitorenRechnungDAO.BETRAG_INDEX]), debitorenRechnungData[DebitorenRechnungDAO.ZAHLUNGSEMPFAENGER_INDEX], debitorenRechnungData[DebitorenRechnungDAO.ZAHLUNGSPFLICHTIGER_INDEX],
 					"");
 
 		} catch (Exception e) {
