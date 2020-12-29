@@ -1,5 +1,10 @@
 package ch.groupone.swissqr.v1.business;
 
+import static ch.groupone.swissqr.v1.persistence.DebitorenRechnungDAO.BETRAG_INDEX;
+import static ch.groupone.swissqr.v1.persistence.DebitorenRechnungDAO.PRIMARYID_INDEX;
+import static ch.groupone.swissqr.v1.persistence.DebitorenRechnungDAO.ZAHLUNGSEMPFAENGER_INDEX;
+import static ch.groupone.swissqr.v1.persistence.DebitorenRechnungDAO.ZAHLUNGSPFLICHTIGER_INDEX;
+
 import java.util.ArrayList;
 
 import ch.groupone.swissqr.v1.persistence.DebitorenRechnungDAO;
@@ -65,16 +70,16 @@ public class DebitorenRechnungFactory {
 
 	public String[] convertDebitorenRechnungToArray(DebitorenRechnung debitorenRechnung) {
 		String[] debitorenRechnungData = new String[4];
-		debitorenRechnungData[DebitorenRechnungDAO.BETRAG_INDEX] = Double.toString(debitorenRechnung.getBetrag());
-		debitorenRechnungData[DebitorenRechnungDAO.ZAHLUNGSEMPFAENGER_INDEX] = debitorenRechnung.getZahlungsempfaenger();
-		debitorenRechnungData[DebitorenRechnungDAO.ZAHLUNGSPFLICHTIGER_INDEX] = debitorenRechnung.getZahlungspflichtiger();
+		debitorenRechnungData[BETRAG_INDEX] = Double.toString(debitorenRechnung.getBetrag());
+		debitorenRechnungData[ZAHLUNGSEMPFAENGER_INDEX] = debitorenRechnung.getZahlungsempfaenger();
+		debitorenRechnungData[ZAHLUNGSPFLICHTIGER_INDEX] = debitorenRechnung.getZahlungspflichtiger();
 		return debitorenRechnungData;
 	}
 
 	public DebitorenRechnung convertArrayToDebitorenRechnung(String[] debitorenRechnungData) {
 
 		try {
-			return createDebitorenRechnungWithPrimaryId(Integer.parseInt(debitorenRechnungData[DebitorenRechnungDAO.PRIMARYID_INDEX]),Double.parseDouble(debitorenRechnungData[DebitorenRechnungDAO.BETRAG_INDEX]), debitorenRechnungData[DebitorenRechnungDAO.ZAHLUNGSEMPFAENGER_INDEX], debitorenRechnungData[DebitorenRechnungDAO.ZAHLUNGSPFLICHTIGER_INDEX],
+			return createDebitorenRechnungWithPrimaryId(Integer.parseInt(debitorenRechnungData[PRIMARYID_INDEX]),Double.parseDouble(debitorenRechnungData[DebitorenRechnungDAO.BETRAG_INDEX]), debitorenRechnungData[DebitorenRechnungDAO.ZAHLUNGSEMPFAENGER_INDEX], debitorenRechnungData[DebitorenRechnungDAO.ZAHLUNGSPFLICHTIGER_INDEX],
 					"");
 
 		} catch (Exception e) {
