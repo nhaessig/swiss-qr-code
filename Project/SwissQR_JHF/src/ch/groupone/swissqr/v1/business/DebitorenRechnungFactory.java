@@ -106,7 +106,7 @@ public class DebitorenRechnungFactory {
 	 * Public function to select a debitorenRechnungID
 	 * 
 	 * @param int debitorenRechnungID
-	 * @return debitorenRechnungData
+	 * @return DebitorenRechnung
 	 */
 	public DebitorenRechnung selectDebitorenRechnung(int debitorenRechnungID) {
 
@@ -117,7 +117,7 @@ public class DebitorenRechnungFactory {
 	/**
 	 * public function list as array debitorenrechnung
 	 * 
-	 * @return debitorenRechnungen
+	 * @return ArrayList<DebitorenRechnung> debitorenRechnungen
 	 */
 	public ArrayList<DebitorenRechnung> selectAllDebitorenRechnung() {
 
@@ -136,7 +136,7 @@ public class DebitorenRechnungFactory {
 	 * Public function convert debitorenrechngung to array
 	 * 
 	 * @param String[] debitorenRechnung
-	 * @return debitorenRechnungData
+	 * @return String[] debitorenRechnungData
 	 */
 	public String[] convertDebitorenRechnungToArray(DebitorenRechnung debitorenRechnung) {
 		
@@ -152,7 +152,7 @@ public class DebitorenRechnungFactory {
 	 * Public function convert array to debitorenrechnung
 	 * 
 	 * @param String[] debitorenRechnungData
-	 * @return debitorenRechnungData
+	 * @return DebitorenRechnung
 	 * @throws null
 	 */
 	public DebitorenRechnung convertArrayToDebitorenRechnung(String[] debitorenRechnungData) {
