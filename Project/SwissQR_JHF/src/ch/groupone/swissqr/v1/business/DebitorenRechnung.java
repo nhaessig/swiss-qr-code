@@ -46,7 +46,7 @@ public interface DebitorenRechnung {
 	
 	/**
 	 * Setter function set zahlungsspflichtiger as String
-	 * @param zahlungspflichtiger
+	 * @param String zahlungspflichtiger
 	 */
 	public void setZahlungspflichtiger(String zahlungspflichtiger);
 }
