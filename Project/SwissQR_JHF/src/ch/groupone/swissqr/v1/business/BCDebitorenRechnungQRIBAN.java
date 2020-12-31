@@ -48,7 +48,7 @@ public class BCDebitorenRechnungQRIBAN extends AbstractDebitorenRechnung {
 	 * Public getter function to getIsbn returns qrIBAN as String
 	 * @return qrIBAN
 	 */
-	public final String getIsbn() {
+	public final String getIBAN() {
 		return qrIBAN;
 	}
 }
