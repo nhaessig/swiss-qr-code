@@ -13,7 +13,7 @@ public interface DebitorenRechnung {
 	 * Getter function to get debitorenRechnungID as int
 	 * @return debitorenRechnungID
 	 */
-	public int debitorenRechnungID();
+	public int getDebitorenRechnungID();
 	
 	/**
 	 * Getter function to get betrag as double

@@ -120,7 +120,7 @@ public class DebitorenRechnungFactory {
 
 	/**
 	 * Public function convert debitorenrechngung to array
-	 * @param String debitorenRechnung
+	 * @param String[] debitorenRechnung
 	 * @return debitorenRechnungData
 	 */
 	public String[] convertDebitorenRechnungToArray(DebitorenRechnung debitorenRechnung) {
@@ -133,8 +133,9 @@ public class DebitorenRechnungFactory {
 
 	/**
 	 * Public function convert array to debitorenrechnung
-	 * @param debitorenRechnungData
-	 * @return DEBITORENRECHNUNGID_INDEX
+	 * @param String[] debitorenRechnungData
+	 * @return debitorenRechnungData
+	 * @throws null
 	 */
 	public DebitorenRechnung convertArrayToDebitorenRechnung(String[] debitorenRechnungData) {
 

@@ -35,7 +35,7 @@ public abstract class AbstractDebitorenRechnung implements DebitorenRechnung {
 		this.zahlungspflichtiger = zahlungspflichtiger;
 	}
 
-	public final int debitorenRechnungID() {
+	public final int getDebitorenRechnungID() {
 		return this.debitorenRechnungID;
 	}
 	

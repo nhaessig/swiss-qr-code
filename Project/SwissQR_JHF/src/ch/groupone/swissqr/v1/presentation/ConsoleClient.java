@@ -66,7 +66,7 @@ public class ConsoleClient {
 	public void displayDebitorRechnungOnConsole(DebitorenRechnung debitorenRechnung) {
 
 		try {
-			System.out.println("---DebitorenRechnung:---ID:" + debitorenRechnung.debitorenRechnungID());
+			System.out.println("---DebitorenRechnung:---ID:" + debitorenRechnung.getDebitorenRechnungID());
 			System.out.println("\tBetrag: " + String.format("%.2f", debitorenRechnung.getBetrag()) + " CHF");
 			System.out.println("\tZahlungsempfaenger: " + debitorenRechnung.getZahlungsempfaenger());
 			System.out.println("\tZahlungspflichtiger: " + debitorenRechnung.getZahlungspflichtiger());
