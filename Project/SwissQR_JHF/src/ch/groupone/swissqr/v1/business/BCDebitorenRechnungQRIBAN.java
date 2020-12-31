@@ -10,14 +10,28 @@ public class BCDebitorenRechnungQRIBAN extends AbstractDebitorenRechnung {
 
 	private String qrIBAN = "";
 
+	/**
+	 *  Constructor for an BCDebitorenRechnungQRIBAN calls super constructor
+	 *  @param double betrag 
+	 *  @param String zahlungsempfaenger
+	 *  @param String zahlungspflichtiger
+	 *  @param String qrIBAN
+	 */
 	public BCDebitorenRechnungQRIBAN(double betrag, String zahlungsempfaenger, String zahlungspflichtiger ,String qrIBAN) {
 		super(betrag, zahlungsempfaenger, zahlungspflichtiger);
 
 		setQrIBAN(qrIBAN);
 	}
 	
+	/**
+	 *  Constructor for an AbstractDebitorenRechnung which also sets the Id,  calls super constructor, should be taken when creating from persistence 
+	 *  @param int debitorenRechnungID
+	 *  @param double betrag 
+	 *  @param String zahlungsempfaenger
+	 *  @param String zahlungspflichtiger
+	 */
 	public BCDebitorenRechnungQRIBAN(int debitorenRechnungID, double betrag, String zahlungsempfaenger, String zahlungspflichtiger ,String qrIBAN) {
-		super(debitorenRechnungID, betrag, zahlungsempfaenger, zahlungspflichtiger);
+		super(debitorenRechnungID, betrag, zahlungsempfaenger,	 zahlungspflichtiger);
 
 		setQrIBAN(qrIBAN);
 	}

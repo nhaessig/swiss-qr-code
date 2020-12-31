@@ -14,12 +14,12 @@ import java.util.Map;
 public class DebitorenRechnungDAOMock implements DebitorenRechnungDAO {
 
 	/**
-	 * set the index value of the debitorenRechnungList
+	 * container for debitorenRechnungen
 	 */
 	private HashMap<String,String[]> debitorenRechnungList = null;
 	
 	/**
-	 * set the index value of the insertCounter
+	 * counter for the container index holding debitorenRechnungen
 	 */
 	private int insertCounter = 0;
 
@@ -50,8 +50,8 @@ public class DebitorenRechnungDAOMock implements DebitorenRechnungDAO {
 	}
 
 	/**
-	 * set all debtors invoices and return as an array
-	 * @return String[] debitorenRechnungen
+	 * set all debtors invoices and return as an arrayList
+	 * @return ArrayList<String[]> debitorenRechnungen
 	 */
 	public ArrayList<String[]> selectAllDebitorenRechnungAsArrayList() {
 		ArrayList<String[]> debitorenRechnungen = new ArrayList<String[]>();

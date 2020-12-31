@@ -47,10 +47,6 @@ public class DebitorenRechnungDAOTest {
 		debitorenRechnungDAO = debitorenRechnungDAOFactory.createDebitorenRechnungDAOMock();
 	}
 
-	@AfterEach
-	void tearDown() throws Exception {
-	}
-
 	@Test
 	public void testIfDebitorenIdIsSetAfterInsert() {
 
