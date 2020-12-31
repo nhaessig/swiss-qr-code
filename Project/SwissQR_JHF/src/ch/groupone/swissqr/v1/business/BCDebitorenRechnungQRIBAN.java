@@ -23,10 +23,18 @@ public class BCDebitorenRechnungQRIBAN extends AbstractDebitorenRechnung {
 		setQrIBAN(qrIBAN);
 	}
 
+	/**
+	 * Public setter function to setQrIBAN as String
+	 * @param String qrIBAN
+	 */
 	public void setQrIBAN(String qrIBAN) {
 		this.qrIBAN = qrIBAN;
 	}
 
+	/**
+	 * Public getter function to getIsbn returns qrIBAN as String
+	 * @return qrIBAN
+	 */
 	public final String getIsbn() {
 		return qrIBAN;
 	}
