@@ -95,8 +95,6 @@ public class DebitorenRechnungFactory {
 
 	/**
 	 * Public function delete all debitorenRechnungDAO
-	 * 
-	 * @param debitorenRechnungDAO
 	 */
 	public void deleteAllDebitorenRechnung() {
 		this.debitorenRechnungDAO.deleteAllDebitorenRechnung();
@@ -135,7 +133,7 @@ public class DebitorenRechnungFactory {
 	/**
 	 * Public function convert debitorenrechngung to array
 	 * 
-	 * @param String[] debitorenRechnung
+	 * @param DebitorenRechnung debitorenRechnung
 	 * @return String[] debitorenRechnungData
 	 */
 	public String[] convertDebitorenRechnungToArray(DebitorenRechnung debitorenRechnung) {
