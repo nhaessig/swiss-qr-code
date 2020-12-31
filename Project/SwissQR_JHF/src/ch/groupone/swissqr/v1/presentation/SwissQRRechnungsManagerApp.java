@@ -21,15 +21,16 @@ public class SwissQRRechnungsManagerApp {
 	// function to generate and save test data
 	private static void generateTestData(int amount, ConsoleClient consoleClient) {
 		Random rand = new Random();
-		
+
 		// please note that all test arrays mus have the same size
 		int testarraysize = zahlungsempfaengerOrPflichtigerArray.length;
-		
+
 		for (int i = 0; i < amount; i++) {
 
 			consoleClient.createDebitorenRechnung(betragArray[rand.nextInt(testarraysize)],
 					zahlungsempfaengerOrPflichtigerArray[rand.nextInt(testarraysize)],
-					zahlungsempfaengerOrPflichtigerArray[rand.nextInt(testarraysize)], qrIbanArray[rand.nextInt(testarraysize)]);
+					zahlungsempfaengerOrPflichtigerArray[rand.nextInt(testarraysize)],
+					qrIbanArray[rand.nextInt(testarraysize)]);
 		}
 	}
 
@@ -41,24 +42,24 @@ public class SwissQRRechnungsManagerApp {
 	public static void main(String[] args) {
 
 		ConsoleClient consoleClient = new ConsoleClient();
-		
+
 		// Console Client with testdata
 		generateTestData(5, consoleClient);
-		
+
 		consoleClient.displayAllDebitorRechnungen();
 		consoleClient.displaySeperator();
-		
+
 		consoleClient.displayDebitorenRechnung(3);
 		consoleClient.displaySeperator();
-		
+
 		consoleClient.deleteDebitorenRechnung(3);
-		
+
 		consoleClient.displayAllDebitorRechnungen();
 		consoleClient.displaySeperator();
 
 		generateTestData(1, consoleClient);
 		consoleClient.displayAllDebitorRechnungen();
-		
+
 		consoleClient.displaySeperator();
 		consoleClient.deleteAllDebitorenRechnung();
 		consoleClient.displaySeperator();
