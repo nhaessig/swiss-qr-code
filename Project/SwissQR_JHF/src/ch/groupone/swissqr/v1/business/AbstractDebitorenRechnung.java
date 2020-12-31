@@ -13,6 +13,10 @@ public abstract class AbstractDebitorenRechnung implements DebitorenRechnung {
 	private String zahlungsempfaenger = "";
 	private String zahlungspflichtiger = "";
 
+	
+	/**
+	 * Default constructor for an AbstractDebitorenRechnung
+	 */
 	public AbstractDebitorenRechnung() {
 		this.debitorenRechnungID = 0;
 		this.betrag = 0.0;
@@ -20,6 +24,12 @@ public abstract class AbstractDebitorenRechnung implements DebitorenRechnung {
 		this.zahlungspflichtiger = "";
 	}
 
+	/**
+	 *  Constructor for an AbstractDebitorenRechnung
+	 *  @param double betrag 
+	 *  @param String zahlungsempfaenger
+	 *  @param String zahlungspflichtiger
+	 */
 	public AbstractDebitorenRechnung(double betrag, String zahlungsempfaenger, String zahlungspflichtiger) {
 		this.debitorenRechnungID = 0;
 		this.betrag = betrag;
@@ -27,6 +37,13 @@ public abstract class AbstractDebitorenRechnung implements DebitorenRechnung {
 		this.zahlungspflichtiger = zahlungspflichtiger;
 	}
 	
+	/**
+	 *  Constructor for an AbstractDebitorenRechnung which also sets the Id, should be taken when creating from persistence 
+	 *  @param int debitorenRechnungID
+	 *  @param double betrag 
+	 *  @param String zahlungsempfaenger
+	 *  @param String zahlungspflichtiger
+	 */
 	public AbstractDebitorenRechnung(int debitorenRechnungID, double betrag, String zahlungsempfaenger, String zahlungspflichtiger) {
 		this.debitorenRechnungID = debitorenRechnungID;
 		this.betrag = betrag;
@@ -34,6 +51,10 @@ public abstract class AbstractDebitorenRechnung implements DebitorenRechnung {
 		this.zahlungspflichtiger = zahlungspflichtiger;
 	}
 
+	/**
+	 * Public getter function returns debitorenRechnungID as integer
+	 * @return int debitorenRechnungID
+	 */
 	public final int getDebitorenRechnungID() {
 		return this.debitorenRechnungID;
 	}
