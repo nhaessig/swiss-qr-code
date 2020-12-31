@@ -1,0 +1,6 @@
+ch.groupone.swissqr.v1.business
+ch.groupone.swissqr.v1.persistence
+ch.groupone.swissqr.v1.presentation
+ch.groupone.swissqr.v1.test.base
+ch.groupone.swissqr.v1.test.business
+ch.groupone.swissqr.v1.test.persistence
