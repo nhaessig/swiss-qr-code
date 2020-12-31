@@ -26,7 +26,7 @@ public class DebitorenRechnungTestBase {
 	public static String[] createDebitorenRechnungAsArray(String betrag, String zahlungsempfaenger, String zahlungspflichtiger)
 	{
 		// debitorenRechnungId is set by the DAO, thats why it is created here as "0"
-		String[] mediaDataAsArray = {"0", betrag, zahlungsempfaenger, zahlungspflichtiger};
-		return mediaDataAsArray;
+		String[] debitorenRechnungDataAsArray = {"0", betrag, zahlungsempfaenger, zahlungspflichtiger};
+		return debitorenRechnungDataAsArray;
 	}
 }
