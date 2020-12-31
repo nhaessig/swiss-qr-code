@@ -1,10 +1,3 @@
-/**
- * Class implementing a factory for customer invoice (Debitorenrechnung) implementations
- * Please note that all accounting specific terms are written in German because it is an exclusive project for accounting in Switzerland
- * 
- * @author Fabrizio Piacente, Markus Kaufmann, Nicolas Hässig
- */
-
 package ch.groupone.swissqr.v1.business;
 
 import static ch.groupone.swissqr.v1.persistence.DebitorenRechnungDAO.BETRAG_INDEX;
@@ -17,6 +10,12 @@ import java.util.ArrayList;
 import ch.groupone.swissqr.v1.persistence.DebitorenRechnungDAO;
 import ch.groupone.swissqr.v1.persistence.DebitorenRechnungDAOFactory;
 
+/**
+ * Class implementing a factory for customer invoice (Debitorenrechnung) implementations
+ * Please note that all accounting specific terms are written in German because it is an exclusive project for accounting in Switzerland
+ * 
+ * @author Fabrizio Piacente, Markus Kaufmann, Nicolas Hässig
+ */
 public class DebitorenRechnungFactory {
 
 	private static DebitorenRechnungFactory instance = null;

@@ -1,11 +1,3 @@
-/**
- * Test class for SwissQRRechnungsManagerApp persistence logic
- * Please note that all accounting specific terms are written in German because it is an exclusive project for accounting in Switzerland
- * 
- * @author Fabrizio Piacente, Markus Kaufmann, Nicolas Hässig
- */
-
-
 package ch.groupone.swissqr.v1.test.persistence;
 
 import static org.junit.Assert.assertEquals;
@@ -37,6 +29,12 @@ import static ch.groupone.swissqr.v1.persistence.DebitorenRechnungDAO.DEBITORENR
 import static ch.groupone.swissqr.v1.persistence.DebitorenRechnungDAO.ZAHLUNGSEMPFAENGER_INDEX;
 import static ch.groupone.swissqr.v1.persistence.DebitorenRechnungDAO.ZAHLUNGSPFLICHTIGER_INDEX;
 
+/**
+ * Test class for SwissQRRechnungsManagerApp persistence logic
+ * Please note that all accounting specific terms are written in German because it is an exclusive project for accounting in Switzerland
+ * 
+ * @author Fabrizio Piacente, Markus Kaufmann, Nicolas Hässig
+ */
 public class DebitorenRechnungDAOTest {
 
 	private DebitorenRechnungDAOFactory debitorenRechnungDAOFactory = null;

@@ -1,10 +1,3 @@
-/**
- * Class implementing a mock implementation for the interface DebitorenRechnungDAO using a HashMap as in-memory data storage.
- * Please note that all accounting specific terms are written in German because it is an exclusive project for accounting in Switzerland
- *  
- * @author Fabrizio Piacente, Markus Kaufmann, Nicolas H�ssig
- */
-
 package ch.groupone.swissqr.v1.persistence;
 
 import java.util.ArrayList;
@@ -12,6 +5,12 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+/**
+ * Class implementing a mock implementation for the interface DebitorenRechnungDAO using a HashMap as in-memory data storage.
+ * Please note that all accounting specific terms are written in German because it is an exclusive project for accounting in Switzerland
+ *  
+ * @author Fabrizio Piacente, Markus Kaufmann, Nicolas H�ssig
+ */
 public class DebitorenRechnungDAOMock implements DebitorenRechnungDAO {
 
 	/**

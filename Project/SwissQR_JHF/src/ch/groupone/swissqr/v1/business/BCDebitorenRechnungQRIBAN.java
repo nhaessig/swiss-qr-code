@@ -1,12 +1,11 @@
+package ch.groupone.swissqr.v1.business;
+
 /**
  * Implementation class for a customer invoice (Derbitorenrechnung) with SwissQR-IBAN
  * Please note that all accounting specific terms are written in German because it is an exclusive project for accounting in Switzerland
  * 
  * @author Fabrizio Piacente, Markus Kaufmann, Nicolas Hässig
  */
-
-package ch.groupone.swissqr.v1.business;
-
 public class BCDebitorenRechnungQRIBAN extends AbstractDebitorenRechnung {
 
 	private String qrIBAN = "";

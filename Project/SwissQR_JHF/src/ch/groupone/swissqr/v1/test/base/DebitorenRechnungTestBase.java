@@ -1,13 +1,12 @@
+
+package ch.groupone.swissqr.v1.test.base;
+
 /**
  * Base class for the testing of the SwissQRRechnungsManagerApp containing reused static variables and functions
  * Please note that all accounting specific terms are written in German because it is an exclusive project for accounting in Switzerland
  * 
  * @author Fabrizio Piacente, Markus Kaufmann, Nicolas Hässig
  */
-
-
-package ch.groupone.swissqr.v1.test.base;
-
 public class DebitorenRechnungTestBase {
 
 	public final static String EXPECTED_BETRAG_1 = "12.55";
