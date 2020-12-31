@@ -45,7 +45,7 @@ public class DebitorenRechnungFactory {
 	 * @param zahlungsempfaenger
 	 * @param zahlungspflichtiger
 	 * @param iban
-	 * @return BCDebitorenRechnungQRIBAN
+	 * @return DebitorenRechnung
 	 */
 	public DebitorenRechnung createDebitorenRechnung(double dBetrag, String zahlungsempfaenger, String zahlungspflichtiger, String iban) {
 		return new BCDebitorenRechnungQRIBAN(dBetrag, zahlungsempfaenger, zahlungspflichtiger, iban);
@@ -58,7 +58,7 @@ public class DebitorenRechnungFactory {
 	 * @param String zahlungsempfaenger
 	 * @param String zahlungspflichtiger
 	 * @param String iban
-	 * @return BCDebitorenRechnungQRIBAN
+	 * @return DebitorenRechnung
 	 */
 	public DebitorenRechnung createDebitorenRechnungWithDebitorenRechnungID(int debitorenRechnungID, double dBetrag, String zahlungsempfaenger, String zahlungspflichtiger, String iban) {
 		return new BCDebitorenRechnungQRIBAN(debitorenRechnungID, dBetrag, zahlungsempfaenger, zahlungspflichtiger, iban);
