@@ -39,26 +39,44 @@ public abstract class AbstractDebitorenRechnung implements DebitorenRechnung {
 		return this.debitorenRechnungID;
 	}
 	
+	/**
+	 * Public get Function get Betrag as double
+	 */
 	public final double getBetrag() {
 		return this.betrag;
 	}
 
+	/**
+	 * Public set Function set Betrag as double
+	 */
 	public void setBetrag(double betrag) {
 		this.betrag = betrag;
 	}
 	
+	/**
+	 * Public get Function Zahlungsempfänger as String
+	 */
 	public final String getZahlungsempfaenger() {
 		return this.zahlungsempfaenger;
 	}
-
+	
+	/**
+	 * Public set Function set Zahlungsempfänger as String
+	 */
 	public void setZahlungsempfaenger(String zahlungsempfaenger) {
 		this.zahlungsempfaenger = zahlungsempfaenger;
 	}
 	
+	/**
+	 * Public get Function to get Zahlungspflichtiger as String
+	 */
 	public final String getZahlungspflichtiger() {
 		return this.zahlungspflichtiger;
 	}
-
+	
+	/**
+	 * Public set Function to set Zahlungspflichtiger as String
+	 */
 	public void setZahlungspflichtiger(String zahlungspflichtiger) {
 		this.zahlungspflichtiger = zahlungspflichtiger;
 	}
