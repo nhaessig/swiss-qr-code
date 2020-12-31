@@ -47,10 +47,10 @@ public class DebitorenRechnungFactory {
 	/**
 	 * Public function create debitorenRechnung without ID
 	 * 
-	 * @param dBetrag
-	 * @param zahlungsempfaenger
-	 * @param zahlungspflichtiger
-	 * @param iban
+	 * @param double dBetrag
+	 * @param String zahlungsempfaenger
+	 * @param String zahlungspflichtiger
+	 * @param String iban
 	 * @return DebitorenRechnung
 	 */
 	public DebitorenRechnung createDebitorenRechnung(double dBetrag, String zahlungsempfaenger,
