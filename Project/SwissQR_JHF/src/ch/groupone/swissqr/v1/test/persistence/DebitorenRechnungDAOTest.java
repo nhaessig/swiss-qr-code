@@ -5,7 +5,6 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -37,16 +36,18 @@ import static ch.groupone.swissqr.v1.persistence.DebitorenRechnungDAO.ZAHLUNGSPF
  */
 public class DebitorenRechnungDAOTest {
 
+	// Class members
 	private DebitorenRechnungDAOFactory debitorenRechnungDAOFactory = null;
-
 	private DebitorenRechnungDAO debitorenRechnungDAO = null;
 
 	@BeforeEach
 	void setUp() throws Exception {
+		//Getting the singletons
 		debitorenRechnungDAOFactory = DebitorenRechnungDAOFactory.getInstance();
 		debitorenRechnungDAO = debitorenRechnungDAOFactory.createDebitorenRechnungDAOMock();
 	}
 
+	// Check if the proper debitorenRechnungsId is set after saving in memory
 	@Test
 	public void testIfDebitorenIdIsSetAfterInsert() {
 
@@ -61,6 +62,7 @@ public class DebitorenRechnungDAOTest {
 
 	}
 
+	// Check if single debitorenRechnungData is properly inserted in memory and selected from memory
 	@Test
 	public void testInsertAndSelectDebitorenRechnungAsArray() {
 
@@ -98,6 +100,7 @@ public class DebitorenRechnungDAOTest {
 		}
 	}
 
+	// Test if the selectAllDebitorenRechnungAsArrayList returns the correct values
 	@Test
 	public void testSelectAllDebitorenRechnungAsArrayList() {
 
@@ -123,6 +126,7 @@ public class DebitorenRechnungDAOTest {
 				.equals(selectedDebitorRechnungData.get(2)[ZAHLUNGSEMPFAENGER_INDEX]));
 	}
 
+	// Test for deleting single entries
 	@Test
 	public void testDeleteDebitorenRechnung() {
 		String[] debitorenRechnungData_1 = DebitorenRechnungTestBase.createDebitorenRechnungAsArray(EXPECTED_BETRAG_1,
@@ -142,6 +146,7 @@ public class DebitorenRechnungDAOTest {
 		assertNull("Expected to be deleted", debitorenRechnungDAO.selectDebitorenRechnungAsArray(2));
 	}
 
+	// Test for deleting all entries
 	@Test
 	public void testDeleteAllDebitorenRechnung() {
 

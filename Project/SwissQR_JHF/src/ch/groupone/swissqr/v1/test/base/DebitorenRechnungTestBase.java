@@ -9,6 +9,7 @@ package ch.groupone.swissqr.v1.test.base;
  */
 public class DebitorenRechnungTestBase {
 
+	// Constants for values
 	public final static String EXPECTED_BETRAG_1 = "12.55";
 	public final static String EXPECTED_ZAHLUNGSEMPFAENGER_1 = "BormAg";
 	public final static String EXPECTED_ZAHLUNGSPFLICHTIGER_1 = "Hans Meier";
@@ -21,9 +22,10 @@ public class DebitorenRechnungTestBase {
 	public final static String EXPECTED_ZAHLUNGSEMPFAENGER_3 = "Garry Gold";
 	public final static String EXPECTED_ZAHLUNGSPFLICHTIGER_3 = "Las Miranda";
 	
-	
+	// Helper function to create a DebitorRechnungsArray
 	public static String[] createDebitorenRechnungAsArray(String betrag, String zahlungsempfaenger, String zahlungspflichtiger)
 	{
+		// debitorenRechnungId is set by the DAO, thats why it is created here as "0"
 		String[] mediaDataAsArray = {"0", betrag, zahlungsempfaenger, zahlungspflichtiger};
 		return mediaDataAsArray;
 	}

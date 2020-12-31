@@ -10,25 +10,25 @@ public interface DebitorenRechnung {
 	
 	/**
 	 * Getter function to get debitorenRechnungID as int
-	 * @return debitorenRechnungID
+	 * @return int debitorenRechnungID
 	 */
 	public int getDebitorenRechnungID();
 	
 	/**
 	 * Getter function to get betrag as double
-	 * @return betrag
+	 * @return double betrag
 	 */
 	public double getBetrag();
 	
 	/**
 	 * Getter function to get zahlungsempfänger as String
-	 * @return zahlungsEmpfaenger
+	 * @return String zahlungsEmpfaenger
 	 */
 	public String getZahlungsempfaenger();
 	
 	/**
 	 * Getter function get zahlungspflichtiger as String
-	 * @return zahlungsPflichtiger
+	 * @return String zahlungsPflichtiger
 	 */
 	public String getZahlungspflichtiger();
 	
