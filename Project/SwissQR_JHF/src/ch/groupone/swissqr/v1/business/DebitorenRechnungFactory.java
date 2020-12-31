@@ -27,6 +27,11 @@ public class DebitorenRechnungFactory {
 		this.debitorenRechnungDAO = DebitorenRechnungDAOFactory.getInstance().createDebitorenRechnungDAOMock();
 	}
 
+	
+	/**
+	 * Public getter function getInstance
+	 * @return instance
+	 */
 	public static DebitorenRechnungFactory getInstance() {
 		if (instance == null) {
 			instance = new DebitorenRechnungFactory();
@@ -35,33 +40,71 @@ public class DebitorenRechnungFactory {
 		return instance;
 	}
 
+	/**
+	 * Public function create debitorenRechnung without ID
+	 * @param dBetrag
+	 * @param zahlungsempfaenger
+	 * @param zahlungspflichtiger
+	 * @param iban
+	 * @return BCDebitorenRechnungQRIBAN
+	 */
 	public DebitorenRechnung createDebitorenRechnung(double dBetrag, String zahlungsempfaenger, String zahlungspflichtiger, String iban) {
 		return new BCDebitorenRechnungQRIBAN(dBetrag, zahlungsempfaenger, zahlungspflichtiger, iban);
 	}
 	
+	/**
+	 * Public function create debitorenRechnung with ID
+	 * @param int debitorenRechnungID
+	 * @param double dBetrag
+	 * @param String zahlungsempfaenger
+	 * @param String zahlungspflichtiger
+	 * @param String iban
+	 * @return BCDebitorenRechnungQRIBAN
+	 */
 	public DebitorenRechnung createDebitorenRechnungWithDebitorenRechnungID(int debitorenRechnungID, double dBetrag, String zahlungsempfaenger, String zahlungspflichtiger, String iban) {
 		return new BCDebitorenRechnungQRIBAN(debitorenRechnungID, dBetrag, zahlungsempfaenger, zahlungspflichtiger, iban);
 	}
 
+	/**
+	 * Public function save debitorenRechnungDAO as DebitorenRechnung
+	 * @param DebitorenRechnung debitorenRechnung
+	 */
 	public void saveDebitorenRechnung(DebitorenRechnung debitorenRechnung) {
 
 		this.debitorenRechnungDAO.insertDebitorenRechnungAsArray(convertDebitorenRechnungToArray(debitorenRechnung));
 	}
 
+	/**
+	 * Public function delete debitorenRechnungID 
+	 * @param int debitorenRechnungID
+	 */
 	public void deleteDebitorenRechnung(int debitorenRechnungID) {
 		this.debitorenRechnungDAO.deleteDebitorenRechnung(debitorenRechnungID);
 	}
 	
+	/**
+	 * Public function delete all debitorenRechnungDAO
+	 * @param debitorenRechnungDAO
+	 */
 	public void deleteAllDebitorenRechnung() {
 		this.debitorenRechnungDAO.deleteAllDebitorenRechnung();
 	}
 
+	/**
+	 * Public function to select a debitorenRechnungID
+	 * @param  int debitorenRechnungID
+	 * @return debitorenRechnungData
+	 */
 	public DebitorenRechnung selectDebitorenRechnung(int debitorenRechnungID) {
 
 		String[] debitorenRechnungData = this.debitorenRechnungDAO.selectDebitorenRechnungAsArray(debitorenRechnungID);
 		return convertArrayToDebitorenRechnung(debitorenRechnungData);
 	}
 
+	/**
+	 * public function list as array debitorenrechnung
+	 * @return debitorenRechnungen
+	 */
 	public ArrayList<DebitorenRechnung> selectAllDebitorenRechnung() {
 
 		ArrayList<DebitorenRechnung> debitorenRechnungen = new ArrayList<DebitorenRechnung>();
@@ -75,6 +118,11 @@ public class DebitorenRechnungFactory {
 		return debitorenRechnungen;
 	}
 
+	/**
+	 * Public function convert debitorenrechngung to array
+	 * @param String debitorenRechnung
+	 * @return debitorenRechnungData
+	 */
 	public String[] convertDebitorenRechnungToArray(DebitorenRechnung debitorenRechnung) {
 		String[] debitorenRechnungData = new String[4];
 		debitorenRechnungData[BETRAG_INDEX] = Double.toString(debitorenRechnung.getBetrag());
@@ -83,6 +131,11 @@ public class DebitorenRechnungFactory {
 		return debitorenRechnungData;
 	}
 
+	/**
+	 * Public function convert array to debitorenrechnung
+	 * @param debitorenRechnungData
+	 * @return DEBITORENRECHNUNGID_INDEX
+	 */
 	public DebitorenRechnung convertArrayToDebitorenRechnung(String[] debitorenRechnungData) {
 
 		try {
