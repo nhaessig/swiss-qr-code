@@ -22,7 +22,7 @@ public class SwissQRRechnungsManagerApp {
 	private static void generateTestData(int amount, ConsoleClient consoleClient) {
 		Random rand = new Random();
 
-		// please note that all test arrays mus have the same size
+		// please note that all test arrays must have the same size
 		int testarraysize = zahlungsempfaengerOrPflichtigerArray.length;
 
 		for (int i = 0; i < amount; i++) {
@@ -44,7 +44,7 @@ public class SwissQRRechnungsManagerApp {
 		ConsoleClient consoleClient = new ConsoleClient();
 
 		// Console Client with testdata
-		generateTestData(5, consoleClient);
+		generateTestData(10, consoleClient);
 
 		consoleClient.displayAllDebitorRechnungen();
 		consoleClient.displaySeperator();

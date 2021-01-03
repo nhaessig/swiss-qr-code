@@ -1,30 +1,53 @@
+package ch.groupone.swissqr.v1.business;
+
 /**
- * Implementation class for a customer invoice (Derbitorenrechnung) with SwissQR-IBAN
- * Please note that all accounting specific terms are written in German because it is an exclusive project for accounting in Switzerland
+ * Implementation class for a customer invoice (Derbitorenrechnung) with
+ * SwissQR-IBAN Please note that all accounting specific terms are written in
+ * German because it is an exclusive project for accounting in Switzerland
  * 
  * @author Fabrizio Piacente, Markus Kaufmann, Nicolas Hässig
  */
-
-package ch.groupone.swissqr.v1.business;
-
 public class BCDebitorenRechnungQRIBAN extends AbstractDebitorenRechnung {
 
+	// Class members
 	private String qrIBAN = "";
 
-	public BCDebitorenRechnungQRIBAN(double betrag, String zahlungsempfaenger, String zahlungspflichtiger ,String qrIBAN) {
+	// Constructors
+	/**
+	 * Constructor for an BCDebitorenRechnungQRIBAN calls super constructor
+	 * 
+	 * @param double betrag
+	 * @param String zahlungsempfaenger
+	 * @param String zahlungspflichtiger
+	 * @param String qrIBAN
+	 */
+	public BCDebitorenRechnungQRIBAN(double betrag, String zahlungsempfaenger, String zahlungspflichtiger,
+			String qrIBAN) {
 		super(betrag, zahlungsempfaenger, zahlungspflichtiger);
-
-		setQrIBAN(qrIBAN);
-	}
-	
-	public BCDebitorenRechnungQRIBAN(int debitorenRechnungID, double betrag, String zahlungsempfaenger, String zahlungspflichtiger ,String qrIBAN) {
-		super(debitorenRechnungID, betrag, zahlungsempfaenger, zahlungspflichtiger);
 
 		setQrIBAN(qrIBAN);
 	}
 
 	/**
+	 * Constructor for an AbstractDebitorenRechnung which also sets the Id, calls
+	 * super constructor, should be taken when creating from persistence
+	 * 
+	 * @param int    debitorenRechnungID
+	 * @param double betrag
+	 * @param String zahlungsempfaenger
+	 * @param String zahlungspflichtiger
+	 */
+	public BCDebitorenRechnungQRIBAN(int debitorenRechnungID, double betrag, String zahlungsempfaenger,
+			String zahlungspflichtiger, String qrIBAN) {
+		super(debitorenRechnungID, betrag, zahlungsempfaenger, zahlungspflichtiger);
+
+		setQrIBAN(qrIBAN);
+	}
+
+	// Getters and Setters
+	/**
 	 * Public setter function to setQrIBAN as String
+	 * 
 	 * @param String qrIBAN
 	 */
 	public void setQrIBAN(String qrIBAN) {
@@ -32,10 +55,11 @@ public class BCDebitorenRechnungQRIBAN extends AbstractDebitorenRechnung {
 	}
 
 	/**
-	 * Public getter function to getIsbn returns qrIBAN as String
-	 * @return qrIBAN
+	 * Public getter function to getIBAN returns qrIBAN as String
+	 * 
+	 * @return String qrIBAN
 	 */
-	public final String getIsbn() {
+	public final String getIBAN() {
 		return qrIBAN;
 	}
 }

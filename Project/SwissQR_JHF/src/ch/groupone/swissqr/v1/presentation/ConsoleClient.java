@@ -15,16 +15,19 @@ import ch.groupone.swissqr.v1.business.DebitorenRechnungFactory;
  */
 public class ConsoleClient {
 
-	// Singleton DebitorenFactory to use
+	// Class members
+	
 	private DebitorenRechnungFactory debitorenRechnungFactory = null;
 
+	// Constructors
 	/**
-	 * Default Constructor for th Console Client
+	 * Default Constructor for the Console Client
 	 */
 	public ConsoleClient() {
 		debitorenRechnungFactory = DebitorenRechnungFactory.getInstance();
 	}
 
+	// Class functions
 	/**
 	 * Creates a new DebitorenRechnung and saves it with the listet attributes
 	 * 
@@ -62,6 +65,7 @@ public class ConsoleClient {
 	 * Helper function to display a single Debitorenrechnung on the console
 	 * 
 	 * @param DebitorenRechnung debitorenRechnung
+	 * @throws if debitorenRechnung or one it's call is null
 	 */
 	public void displayDebitorRechnungOnConsole(DebitorenRechnung debitorenRechnung) {
 

@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"ch.groupone.swissqr.v1.business"},{"l":"ch.groupone.swissqr.v1.persistence"},{"l":"ch.groupone.swissqr.v1.presentation"},{"l":"ch.groupone.swissqr.v1.test.base"},{"l":"ch.groupone.swissqr.v1.test.business"},{"l":"ch.groupone.swissqr.v1.test.persistence"}];updateSearchResults();

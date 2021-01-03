@@ -1,10 +1,3 @@
-/**
- * Class implementing a mock implementation for the interface DebitorenRechnungDAO using a HashMap as in-memory data storage.
- * Please note that all accounting specific terms are written in German because it is an exclusive project for accounting in Switzerland
- *  
- * @author Fabrizio Piacente, Markus Kaufmann, Nicolas H�ssig
- */
-
 package ch.groupone.swissqr.v1.persistence;
 
 import java.util.ArrayList;
@@ -12,28 +5,34 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+/**
+ * Class implementing a mock implementation for the interface DebitorenRechnungDAO using a HashMap as in-memory data storage.
+ * Please note that all accounting specific terms are written in German because it is an exclusive project for accounting in Switzerland
+ *  
+ * @author Fabrizio Piacente, Markus Kaufmann, Nicolas H�ssig
+ */
 public class DebitorenRechnungDAOMock implements DebitorenRechnungDAO {
 
+	// Class members
 	/**
-	 * set the index value of the debitorenRechnungList
+	 * container for debitorenRechnungen
 	 */
 	private HashMap<String,String[]> debitorenRechnungList = null;
-	
-	/**
-	 * set the index value of the insertCounter
-	 */
 	private int insertCounter = 0;
 
+	// Constructors
 	/**
-	 * default constructor
+	 * Default constructor
 	 */
 	public DebitorenRechnungDAOMock() {
 		this.debitorenRechnungList = new HashMap<String, String[]>();
 		this.insertCounter = 0;
 	}
 
+	// Class functions
 	/**
-	 * insert a debtor invoice
+	 * Saves the debitorenRechnungData in memory
+	 * @param String[] debitorenRechnungData
 	 */
 	public void insertDebitorenRechnungAsArray(String[] debitorenRechnungData) {
 		this.insertCounter++;
@@ -42,7 +41,7 @@ public class DebitorenRechnungDAOMock implements DebitorenRechnungDAO {
 	}
 
 	/**
-	 * set debtors invoices by the given value and return as an array
+	 * Selects the debitorenRechnungData by the given id from memory
 	 * @return String[] debitorenRechnungen
 	 */
 	public String[] selectDebitorenRechnungAsArray(int debitorenRechnungID) {
@@ -51,12 +50,13 @@ public class DebitorenRechnungDAOMock implements DebitorenRechnungDAO {
 	}
 
 	/**
-	 * set all debtors invoices and return as an array
-	 * @return String[] debitorenRechnungen
+	 * Selects all the debitorenRechnungData which are in the memory
+	 * @return ArrayList<String[]> debitorenRechnungen
 	 */
 	public ArrayList<String[]> selectAllDebitorenRechnungAsArrayList() {
 		ArrayList<String[]> debitorenRechnungen = new ArrayList<String[]>();
 		
+		// We don't want to pass the debitorenRechnungList reference outside this class, so this is a copy (also without the not needed index)
 		Map<String, String[]> map = debitorenRechnungList;
 		Iterator<Map.Entry<String, String[]>> entries = map.entrySet().iterator();
 		while (entries.hasNext()) {
@@ -68,7 +68,7 @@ public class DebitorenRechnungDAOMock implements DebitorenRechnungDAO {
 	}
 	
 	/**
-	 * deletes debtors invoice by the given value
+	 * Deletes the debtors invoice by the given value
 	 * @param int debitorenRechnungID
 	 */
 	public void deleteDebitorenRechnung(int debitorenRechnungID) {
@@ -77,7 +77,7 @@ public class DebitorenRechnungDAOMock implements DebitorenRechnungDAO {
 	}
 	
 	/**
-	 * deletes all debtors invoice
+	 * Deletes all debtors invoice from memory
 	 */
 	public void deleteAllDebitorenRechnung() {
 		debitorenRechnungList.clear();
